@@ -71,7 +71,7 @@ public final class TankDrive {
 
         // drive model parameters
         public double inPerTick = 0.00198;
-        public double trackWidthTicks = 0;
+        public double trackWidthTicks = 14.6;
 
         // feedforward parameters (in tick units)
         public double kS = 0;
@@ -235,8 +235,8 @@ public final class TankDrive {
         // TODO: make sure your config has motors with these names (or change them)
         //   add additional motors on each side if you have them
         //   see https://ftc-docs.firstinspires.org/en/latest/hardware_and_software_configuration/configuring/index.html
-        leftMotor = Arrays.asList(hardwareMap.get(DcMotorEx.class, "left"));
-        rightMotor = Arrays.asList(hardwareMap.get(DcMotorEx.class, "right"));
+        leftMotor = Arrays.asList(hardwareMap.get(DcMotorEx.class, "leftMotor"));
+        rightMotor = Arrays.asList(hardwareMap.get(DcMotorEx.class, "rightMotor"));
 
         for (DcMotorEx m : leftMotor) {
             m.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);

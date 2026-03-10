@@ -15,5 +15,14 @@ public class testerr extends LinearOpMode {
 
         waitForStart();
 
+        while(opModeIsActive()){
+
+            double y = gamepad1.left_stick_y;
+            double x = gamepad1.left_stick_x;
+
+            Pose2d newPose =drive.localizer.getPose();
+            telemetry.addData("locAtual",newPose );
+
+        }
     }
 }

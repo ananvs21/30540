@@ -7,8 +7,8 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
 import org.firstinspires.ftc.teamcode.rr.TankDrive;
-@TeleOp ( name = "testeTeleOp", group = "Linear TesteOp")
-public class testeTeleOp extends LinearOpMode {
+@TeleOp ( name = "TankOdo", group = "Linear TesteOp")
+public class tankOdo extends LinearOpMode {
     @Override
     public void runOpMode(){
         Pose2d startPose = new Pose2d(0, 0, 0);
@@ -18,13 +18,13 @@ public class testeTeleOp extends LinearOpMode {
 
         while(opModeIsActive()){
 
-            double y = gamepad1.left_stick_y;
-            double x = gamepad1.right_stick_x;
+            double y = -gamepad1.left_stick_y;
+            double x = -gamepad1.right_stick_x;
 
             drive.setDrivePowers(
                     new PoseVelocity2d(
-                            new Vector2d(x,0),
-                            y
+                            new Vector2d(y,0),
+                            x
                     )
             );
 
